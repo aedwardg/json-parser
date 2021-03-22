@@ -53,7 +53,7 @@ _NOTE: For now the parse tree is printed to the terminal, but in the future I wo
 To try the JSONParser locally, use the following steps:
 
 1. Ensure you have Python 3.6 or above installed. You can download it [here](https://www.python.org/downloads/) if you don't already have it.
-2. Clone the repo using HTTPS, SSH, GitHub CLI, or by downloading the .zip file and extracting it.
+2. Clone the repository to your computer (instructions [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)).
 3. Navigate to the json-parser directory and create and activate a virtual environment with these commands:
 
    ```bash

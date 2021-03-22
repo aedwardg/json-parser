@@ -1,0 +1,36 @@
+// Grammar based loosely on specification here: https://www.crockford.com/mckeeman.html
+// Whitespace not included as it is ignored by parglare
+
+JSON: Element;
+Value: Object | Array | String | Number | Bool | NULL;
+
+Object: "{" "}" | "{" Members "}";
+
+Members: Member+[comma];
+Member: String ":" Element;
+
+@pass_inner
+Array: "[" "]" | "[" Elements "]";
+
+Element: Value;
+Elements: Element+[comma];
+
+@pass_inner
+String: "\"" CHARS "\"";
+
+Number: INT | FLOAT;
+Bool: TRUE | FALSE;
+
+
+terminals
+
+comma: ",";
+
+NULL: "null";
+TRUE: "true";
+FALSE: "false";
+CHARS: /[^"]*/;
+
+// INT and FLOAT are ambiguous. Prefer INT if both match are of same length.
+INT: /[-+]?[0-9]+\b/ {prefer};
+FLOAT: /[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?\b/;

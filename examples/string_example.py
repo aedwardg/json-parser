@@ -1,3 +1,7 @@
+from setup import setup
+
+JSONParser = setup()
+
 json_string = """
     {"menu": {
       "id": "file",
@@ -12,3 +16,15 @@ json_string = """
     }}
 """
 
+
+def main(input_str=json_string):
+    my_parser = JSONParser()
+    result = my_parser.from_string(input_str)
+
+    print("Input:\n", input_str)
+    print("Result\n", result)
+    print("Result Type\n", type(result))
+
+
+if __name__ == "__main__":
+    main()

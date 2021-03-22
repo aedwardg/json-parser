@@ -22,3 +22,11 @@ class JSONParser:
 
         result = parser.parse(input_str)
         return result
+
+    def from_stream(self, source):
+        g = Grammar.from_file(self.grammar)
+        parser = Parser(g, actions=self.actions)
+
+        with open(source, "r") as f:
+            result = parser.parse(f.read())
+        return result

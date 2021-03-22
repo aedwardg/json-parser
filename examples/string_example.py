@@ -17,9 +17,9 @@ json_string = """
 """
 
 
-def main(input_str=json_string):
+def main(input_str=json_string, **kwargs):
     my_parser = JSONParser()
-    result = my_parser.from_string(input_str)
+    result = my_parser.from_string(input_str, debug_colors=True, **kwargs)
 
     print("Input:\n", input_str)
     print("Result\n", result)
@@ -27,4 +27,4 @@ def main(input_str=json_string):
 
 
 if __name__ == "__main__":
-    main()
+    main(debug=True)

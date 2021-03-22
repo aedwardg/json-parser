@@ -4,7 +4,7 @@ from setup import setup
 JSONParser = setup()
 
 
-def main(filename="glossary.json", **kwargs):
+def main(filename="jsons/glossary.json", **kwargs):
     my_parser = JSONParser()
 
     this_folder = os.path.dirname(__file__)
@@ -18,4 +18,4 @@ def main(filename="glossary.json", **kwargs):
 
 
 if __name__ == "__main__":
-    main(filename="web_app.json", debug=True)
+    main(filename="jsons/web_app.json", debug=True)

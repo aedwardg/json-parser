@@ -9,15 +9,12 @@ Object: "{" "}" | "{" Members "}";
 Members: Member+[comma];
 Member: String ":" Element;
 
-@pass_inner
 Array: "[" "]" | "[" Elements "]";
 
 Element: Value;
 Elements: Element+[comma];
 
-@pass_inner
-String: "\"" CHARS "\"";
-
+String: quote quote | quote CHARS quote;
 Number: INT | FLOAT;
 Bool: TRUE | FALSE;
 
@@ -25,6 +22,7 @@ Bool: TRUE | FALSE;
 terminals
 
 comma: ",";
+quote: /"/;
 
 NULL: "null";
 TRUE: "true";

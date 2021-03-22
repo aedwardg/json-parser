@@ -44,6 +44,50 @@ When `build_tree` is set to `True`, the parser will print the entire parse tree 
 3. The resulting Parser object (not the deserialized JSON), e.g., `<NonTerm(start=5, end=286, sym=JSON)>`
 4. The Python type of the parser object, e.g., `<class 'parglare.parser.NodeNonTerm'>`
 
-This is because parglare's Parser returns the final node rather than the parse result when the `build_tree` object is selected.
+This is because parglare's Parser returns the final node rather than the parse result when the `build_tree` option is selected.
 
 _NOTE: For now the parse tree is printed to the terminal, but in the future I would like to have it write to a separate file since Windows terminals have a maximum scrollback of 10,000 lines and parse trees are usually longer than that._
+
+## Try It Out
+
+To try the JSONParser locally, use the following steps:
+
+1. Ensure you have Python 3.6 or above installed. You can download it [here](https://www.python.org/downloads/) if you don't already have it.
+2. Clone the repo using HTTPS, SSH, GitHub CLI, or by downloading the .zip file and extracting it.
+3. Navigate to the json-parser directory and create and activate a virtual environment with these commands:
+
+   ```bash
+   $ cd json-parser/
+   $ python -m venv venv
+   $ source venv/bin/activate
+   ```
+
+   For Windows users using CMD, replace the activation command with
+
+   ```cmd
+   venv\Scripts\activate
+   ```
+
+   or for those using a bash terminal on Windows, replace the activation command with
+
+   ```bash
+   $ source venv/Scripts/activate
+   ```
+
+4. Run the examples!
+
+   - You can run the examples as-is, like you would any Python file:
+
+     ```bash
+     $ cd examples
+     $ python ./string_example.py
+     ```
+
+   - You can also define your own strings for `string_example.py`, change the JSON files parsed in `file_example.py` and `stream_example.py` or change any of the options as discussed above in the [Usage](#usage) section.
+     - Note that if you want to parse a JSON file not included in the `examples/jsons` directory, the easiest way is to move it into that directory and follow the naming convention that's in the examples. Both `from_file()` and `from_stream()` take absolute paths, but the file and stream examples have been modified to use paths relative to their directory (`json-parser/examples`).
+
+## Attribution
+
+The [JSONParser grammar](https://github.com/aedwardg/json-parser/blob/main/jparse/jsongrammar.pg) is loosely based on the McKeeman Grammar described at [json.org](https://www.json.org), with some additional changes to accommodate parglare's pure BNF grammar with syntactic sugar. Additionally, parglare automatically ignores whitespace, so additional whitespace grammar rules were not needed.
+
+All example JSON files are also from [json.org](https://json.org/example.html) for ease of use and consistency.

@@ -74,7 +74,13 @@ To try the JSONParser locally, use the following steps:
    $ source venv/Scripts/activate
    ```
 
-4. Run the examples!
+4. With your virtual environment activated, install parglare:
+
+   ```bash
+   $ pip install parglare
+   ```
+
+5. Run the examples!
 
    - You can run the examples as-is, like you would any Python file:
 

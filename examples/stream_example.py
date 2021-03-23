@@ -1,7 +1,5 @@
 import os
-from setup import setup
-
-JSONParser = setup()
+from jparse.parser import JSONParser
 
 
 def main(source="jsons/glossary.json", **kwargs):

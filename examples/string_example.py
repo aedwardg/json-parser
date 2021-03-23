@@ -1,6 +1,4 @@
-from setup import setup
-
-JSONParser = setup()
+from jparse.parser import JSONParser
 
 json_string = """
     {"menu": {

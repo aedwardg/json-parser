@@ -42,10 +42,10 @@ def null_action(context, value):
 
 
 @action("TRUE")
-def null_action(context, value):
+def true_action(context, value):
     return True
 
 
 @action("FALSE")
-def null_action(context, value):
+def false_action(context, value):
     return False

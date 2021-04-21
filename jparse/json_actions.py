@@ -22,7 +22,8 @@ def object_action(context, nodes):
 
 @action("String")
 def string_action(context, nodes):
-    return pass_inner(context, nodes)
+    str = pass_inner(context, nodes)
+    return str if str else ""
 
 
 # Terminal Rule actions
